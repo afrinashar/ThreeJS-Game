@@ -1,0 +1,244 @@
+#root {
+  background-color: rgb(218, 218, 255);
+  width:100rem;
+  align-content: center !important;
+  margin: 0 auto;
+  
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+   gap: 2px;position: relative;
+}
+.board2{  
+  cursor: url('https://m.media-amazon.com/images/I/81Wmy9kiq8L._AC_UF1000,1000_QL80_.jpg'),auto; 
+  background-color: #ffffff; display: grid;
+  border: #039aff;
+  grid-template-columns: repeat(3, 1fr); gap: 2px;};
+  .board2 button{ cursor: url('https://m.media-amazon.com/images/I/81Wmy9kiq8L._AC_UF1000,1000_QL80_.jpg'),auto; 
+    border:5px #039aff;}
+.cell {
+  border: 1px solid #ffffff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  justify-content: center;
+}
+.cell2 {
+  border: 1px solid #00d9ff;
+  height: 320px;
+   width: 350px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  justify-content: center;
+}
+.player {
+  border-radius: 5px; 
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+}  
+.players {
+  background-color: #ff0000;
+  color: #fff;
+  font-weight: bold;
+}   
+.perry{
+  background-image: url('./assets/perry.png')  ;  
+ background-repeat: no-repeat;
+  background-size: 400px 300px;  position: relative;
+  animation: mymove 0.5s ;
+}
+@keyframes mymove {
+  from {top: 200px;}
+  to {top: 10px;}
+}
+
+.board2 button{ font-weight:900; cursor:url(''), auto;}
+.o{background-color: #ff0000;}
+.x{background-color: #3498db;}
+.s1{position: absolute; height: 39px; width: 39px;}.lad{position: absolute; height: 39px; width: 39px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.game-block {
+  margin: 0;
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #ddd;
+}
+.piece-i {
+  background-color: #ec858b;
+}
+.piece-j {
+  background-color: #f1b598;
+}
+.piece-l {
+  background-color: #f8efae;
+}
+.piece-o {
+  background-color: #b5a677;
+}
+.piece-s {
+  background-color: #816e56;
+}
+.piece-t {
+  background-color: #b77c72;
+}
+.piece-z {
+  background-color: #e3be58;
+}
+.piece-preview {
+  background-color: #eee;
+}
+.btn{border-radius: 2px;   margin: 2px; padding-inline: 6px;font-weight: 900; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: rgb(20, 0, 94); border: 3px solid rgb(20, 0, 94); }
+.btn:hover{box-shadow: 3px 3px 12px rgb(20, 0, 94); size: 10px;}.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+ 
+.nav{background-color: rgb(20, 0, 94);
+color: rgb(255, 255, 255);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+min-height: 10vh;
+align-items: center;
+justify-content: center;
+ font-weight: 900;
+font-size: xx ;
+}
+h1{ height: 100px;
+text-size-adjust: 100px;}
+.top strong{color: rgb(20, 0, 94);}
+
+
+
+
+
+.tile {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.rack {
+  display: flex;
+  justify-content: center;
+}
+
+.boards {
+  width: 400px;
+  height: 400px;
+  background-color: #eee;
+  border: 2px solid #aaa;
+  margin: 20px auto;
+}
