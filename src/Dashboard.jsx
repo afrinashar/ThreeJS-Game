@@ -35,9 +35,9 @@ const Dashboard = () => {
         </Row>
         <Row>
           <Col><Card>
-              <Link to="SnakeAndLadders">
+              <Link to="TicTac">
                 <img src={tic} className="fluid   w-100 p-5 "></img>
-                <h1>Snake And Ladders</h1>
+                <h1>Tic Tac Toe</h1>
               </Link>
             </Card></Col>
           <Col><Card>

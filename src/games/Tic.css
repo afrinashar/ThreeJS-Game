@@ -1,0 +1,15 @@
+.tic{
+    background: rgb(100,6,143);
+    background: linear-gradient(84deg, rgba(100,6,143,1) 13%, rgba(193,11,247,1) 37%, rgba(80,0,149,1) 100%);
+color: white;
+border: 10px white;
+}
+.square{
+    width: 362px;
+    height: 362px ;
+    border: 3px white;
+}
+.ticBtn{
+    background-color: rgb(255, 255, 255);
+    color: linear-gradient(84deg, rgba(100,6,143,1) 13%, rgba(193,11,247,1) 37%, rgba(80,0,149,1) 100%);
+ }

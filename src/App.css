@@ -14,7 +14,6 @@
   height: 40vmin;
   pointer-events: none;
 }
-.square button{ width: 262px; height: 268px;}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

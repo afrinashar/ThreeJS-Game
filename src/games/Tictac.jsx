@@ -1,6 +1,9 @@
-import { useState } from 'react';
-import x from "../assets/x.png";import o from "../assets/o.png";
-const TicTac = () => { const [xIsNext, setXIsNext] = useState(true);
+import { useState } from "react";
+import x from "../assets/x.png";
+import o from "../assets/o.png";
+import "./Tic.css"
+const TicTac = () => {
+  const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
@@ -20,39 +23,54 @@ const TicTac = () => { const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "Winner: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "Next player: " + (xIsNext ? "X" : "O");
   }
-
+  const start = () => {
+    window.location.reload();
+  };
   return (
     <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+    <h1 className="tic">Tic Tac Toe</h1>
+      <div>
+   
+        <div className="status tic"><h6>{status}</h6></div>
+        <div className="board-row  bg-light">
+          <Square
+            className="tic"
+            value={squares[0]}
+            onSquareClick={() => handleClick(0)}
+          />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        </div>
+        <div className="board-row">
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
       </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
+      <button className="ticBtn" onClick={start}>
+        
+        Start
+      </button>
     </>
-  )
-}
-function Square({value, onSquareClick}) {
+  );
+};
+function Square({ value, onSquareClick }) {
   return (
-    <button  className="square p-5" onClick={onSquareClick}>
+    <button className="square tic p-5" onClick={onSquareClick}>
       {value}
     </button>
   );
-}function calculateWinner(squares) {
+}
+function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -71,4 +89,4 @@ function Square({value, onSquareClick}) {
   }
   return null;
 }
-export default TicTac
+export default TicTac;
