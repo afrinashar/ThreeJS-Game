@@ -11,9 +11,9 @@ export const Drawing = () => {
         width={1000}
         height={1000}
         onSave={(blob) => console.log(blob)}
-        render={({canvas, triggerSave, setLineCap,setLineWidth,setColor  }) => (
-          <div>
-            <div className="toolbox">
+        render={({canvas, triggerSave, setLineCap,setLineWidth,setColor,setLineJoin,imageDownloadUrl  }) => (
+          <div className="row">
+            <div className="col">
               <div className="flex">
                 <label htmlFor=""> Color</label> 
                 <input
@@ -25,14 +25,19 @@ export const Drawing = () => {
                 <label htmlFor=""> Line</label> 
                 <input type="range"  min={1} max={50} onChange={e => setLineWidth(e.target.value)} />
               </div>
-              <div className="toolbox">  <select onChange={e => setLineCap(e.target.value)}>
+              <div className="col">  <select onChange={e => setLineCap(e.target.value)}>
         <option value="round">round</option>
         <option value="butt">butt</option>
         <option value="square">square</option>
+      </select></div>  
+      <div className="col">  <select onChange={e => setLineJoin(e.target.value)}>
+        <option value="round">round</option>
+        <option value="bevel">bevel</option>
+        <option value="miter">miter</option>
       </select></div>
-            </div>
-            <button onClick={triggerSave}>Save Canvas</button>
-            <div>{canvas}</div>
+            </div><div className="bg-light border border-dark m-5">{canvas}</div>
+            <button className="btn btn-danger" onClick={triggerSave}>Save</button>
+            {imageDownloadUrl?<a className="btn btn-success" href={imageDownloadUrl} download>Download</a>:null}
           </div>
         )}
       ></ReactPainter>

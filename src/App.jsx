@@ -25,8 +25,7 @@ import { Drawing } from "./components/Drawing";
  function App() {
   return (
     <>
-      <h1 className="text-light bg-danger">games Hub</h1>
- 
+     
       
       <Routes>   <Route exact path="/" element={<Dashboard />} /> 
         <Route exact path="/HideAndSeek" element={<Hide />} /> 

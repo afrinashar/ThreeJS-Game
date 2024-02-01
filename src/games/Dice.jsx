@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from "react";
 import "../App.css";import zero from "../assets/0.png";
-import one from "../assets/1.jpg";
-import two from "../assets/2.jpg";
-import three from "../assets/3.jpg";
-import four from "../assets/4.jpg";
-import five from "../assets/5.jpg";
-import six from "../assets/6.jpg";
+import one from "../assets/1.png";
+import two from "../assets/2.png";
+import three from "../assets/3.png";
+import four from "../assets/4.png";
+import five from "../assets/5.png";
+import six from "../assets/6.png";
  import { Button, Modal } from "react-bootstrap"; 
+import { Link } from 'react-router-dom';
 const Dice = () => {
     var Add = [7, 2, 4, 1, 3, 5];
     
@@ -83,24 +84,18 @@ const Dice = () => {
     // console.log(options.value);
     return (
       <>
-        <div className="nav">
-          <h1>Play with FERO</h1>
+     <div className="nav ">
+          <h1>Play with Afrin</h1>
         </div>
-        <div className="top">
-          <h3>
-            <strong>Name:</strong>
-            {name}
-          </h3>
-          <h3>
+         <div className='centers '>  <div className="top">
+           <Link to="/" className='btn '>Back</Link>
+          <h1 className='m-5'>
             <strong>Score:</strong>
             {score}
-          </h3>
-          <h3>
-            <strong>Highest Score:</strong>
-            {high}
-          </h3>
+          </h1>
+          
         </div>
-        <div
+        {/* <div
           className="modal show"
           style={{ display: "block", position: "initial" }}
         >
@@ -115,38 +110,38 @@ const Dice = () => {
               </form>
             </Modal.Header>
           </Modal>
-        </div>
+        </div> */}
         
-        <button onClick={handleClick} name="0" className="btn">
+        <button onClick={handleClick} name="0" className="btn p-3">
           1
         </button>{" "}
-        <button onClick={handleClick} name="1" className="btn">
+        <button onClick={handleClick} name="1" className="btn p-3">
           2
         </button>
-        <button onClick={handleClick} name="2" className="btn">
+        <button onClick={handleClick} name="2" className="btn p-3">
           3
         </button>
-        <button onClick={handleClick} name="3" className="btn">
+        <button onClick={handleClick} name="3" className="btn p-3">
           4
         </button>
-        <button onClick={handleClick} name="4" className="btn">
+        <button onClick={handleClick} name="4" className="btn p-3">
           5
         </button>
-        <button onClick={handleClick} name="5" className="btn">
+        <button onClick={handleClick} name="5" className="btn p-3">
           6
         </button>
-        <h1>{output}</h1>
-        {comment}
-        {input}
+       
+       
+        
          <div>
           <img
-            className="bg-primary border border-black"
+            className="nav border m-5 border-black"
             src={image}
-            height={100}
-            width={100}
+            height={280}
+            width={285}
           ></img>
-        </div>
-      </>
+        </div> <h1 className='p-5'> {comment}</h1>
+     </div>  </>
     );
   }
   
