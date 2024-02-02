@@ -20,6 +20,7 @@ import { Grossary } from "./games/Grossary";
 import { Route, Routes, Link } from "react-router-dom";
 import SpinningCube from "./games/Cube";
 import Dashboard from "./Dashboard";
+import TomJerry from "./games/TomJerry";
 import MainApp from './games/Cards'
 import { Drawing } from "./components/Drawing";
  function App() {
@@ -29,7 +30,7 @@ import { Drawing } from "./components/Drawing";
       
       <Routes>   <Route exact path="/" element={<Dashboard />} /> 
         <Route exact path="/HideAndSeek" element={<Hide />} /> 
-        <Route exact path="/Drawing" element={<Drawing />} /> 
+        <Route exact path="/Drawing" element={<Drawing />} /> <Route exact path="/tom" element={<TomJerry />} /> 
         <Route exact path="/Arithmetic" element={<Arithmetic />} /> 
         <Route exact path="/scrumble" element={<Scramble />} /> 
         <Route exact path="/Tetris" element={<Tetrisg />} />

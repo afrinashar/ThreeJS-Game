@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Card, Button } from "react-bootstrap";
 import "./App.css";import { Link } from "react-router-dom";
-import Hide from "./games/Hide";
+import Hide from "./games/Hide";import sum from "./assets/sum.png"
 import hide from "./assets/perryt.jpg";import drawing from "./assets/drawing.webp";
 import snake from "./assets/snaket.jpg";import dice from "./assets/dice.jpg";
 import tic from "./assets/tict.jpg";import test from "./assets/testrist.jpg";
@@ -41,9 +41,9 @@ const Dashboard = () => {
               </Link>
             </Card></Col>
           <Col><Card>
-              <Link to="SnakeAndLadders">
-                <img src={hide} className="fluid w-100 p-5"></img>
-                <h1>Snake And Ladders</h1>
+              <Link to="Arithmetic">
+                <img src={sum} className="fluid w-100 p-5"></img>
+                <h1>Find Sum</h1>
               </Link>
             </Card></Col>
         </Row>
