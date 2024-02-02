@@ -3,7 +3,7 @@ import Timer from '../components/Timer';
 import { Link } from 'react-router-dom';
 
 const Arithmetic = () => { const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(0);
+  const [num2, setNum2] = useState(1);
   const [sum, setSum] = useState(0);
   const [score, setScore] = useState(0);
 
@@ -23,25 +23,27 @@ const Arithmetic = () => { const [num1, setNum1] = useState(0);
     }
     generateQuestion();
   };
-  const start = () => {
+  const start = () => { 
     window.location.reload();
+   
   };
   return (
-    <div className="App"><Timer initialSeconds={30}/>
-   <button onClick={start}></button>  <Link  className=' btn  btn-warning' to="/">Back</Link>  <form onSubmit={submit}>
+    <div className="App"> 
+    <h1 className='bg-warning'>Find the Sum</h1>
+     <Link  className=' btn  float-start btn-warning' to="/">Back</Link>   <h1 className='float-end'>score: {score}</h1> <form onSubmit={submit}>
         <div>
           <h3>
             {num1} + {num2}</h3> 
           
-          <input value={sum} onChange={(e) => setSum(e.target.value)} />
+          <input className='bg-dark text-warning' type='number' value={sum} onChange={(e) => setSum(e.target.value)} />
         </div>
 
-        <button className=' btn btn-danger' type="submit">Submit</button>
+        <button className=' btn btn-warning' type="submit">Submit</button>
       </form>
       <button type="button" onClick={generateQuestion}>
       next
       </button>
-      <p>score: {score}</p>
+    
     </div>
   );
 }

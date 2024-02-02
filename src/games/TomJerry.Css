@@ -1,10 +1,1 @@
-.jerry{
-    background-image: url('./assets/perry.png')  ;  
-   background-repeat: no-repeat;
-    background-size: 400px 300px;  position: relative;
-    animation: mymove 0.5s ;
-  }
-  @keyframes mymove {
-    from {left: 200px;}
-    to {left: 10px;}
-  }
+ 

@@ -8,8 +8,8 @@ export const Drawing = () => {
     <>
       Drawing
       <ReactPainter
-        width={1000}
-        height={1000}
+        width={100}
+        height={100}
         onSave={(blob) => console.log(blob)}
         render={({canvas, triggerSave, setLineCap,setLineWidth,setColor,setLineJoin,imageDownloadUrl  }) => (
           <div className="row">
