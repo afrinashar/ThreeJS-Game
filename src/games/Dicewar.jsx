@@ -143,7 +143,7 @@ const Dicewar = () => {
         >
           Roll Dice
         </button></div> 
-        {positionOne}
+         
        
        <div className=" col card" >
         <img

@@ -2,6 +2,7 @@ import { useState } from "react";
 import x from "../assets/x.png";
 import o from "../assets/o.png";
 import "./Tic.css"
+import { Link } from "react-router-dom";
 const TicTac = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -34,8 +35,8 @@ const TicTac = () => {
     <>
     <h1 className="tic">Tic Tac Toe</h1>
       <div>
-   
-        <div className="status tic"><h6>{status}</h6></div>
+   <Link to="/"  className=" btn status tic">Back</Link>
+        <div className="status tic"><h3>{status}</h3></div>
         <div className="board-row  bg-light">
           <Square
             className="tic"

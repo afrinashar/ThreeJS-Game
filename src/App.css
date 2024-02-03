@@ -92,14 +92,14 @@ c
 .board2 button{ font-weight:900; cursor:url(''), auto;}
 .o{background-color: #ff0000;}
 .x{background-color: #3498db;}
-.s1{position: absolute; height: 39px; width: 39px;}.lad{position: absolute; height: 39px; width: 39px;}
+.s1{  height: 109px; width: 89px;  margin: 600px 0px 0px 0px;}.lad{ height: 139px; width: 89px;  margin: 0px 0px 100px 0px;}
 
+.s2{  height: 09px; width: 289px;  margin: 20px 0px 0px 0px;}
+.s3{  height: 159px; width: 119px;  margin: 0px 0px 0px 0px;}
+.s4{  height: 309px; width: 289px;  margin: 200px 0px 60px 0px;}
 
-
-
-
-
-
+.lad2{ height: 139px; width: 49px;  margin: 0px 0px 100px 0px;}
+.lad3{ height: 139px; width: 89px;  margin:500px 0px 100px 0px;}
 
 
 

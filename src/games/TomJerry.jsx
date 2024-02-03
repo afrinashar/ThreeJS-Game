@@ -33,7 +33,7 @@ import { Link } from "react-router-dom";
  
   return (
     <>
-     <h1 className="bg-primary text-light">Tom And Jerry</h1>   <Link className="btn btn-primary">Back</Link>
+     <h1 className="bg-primary text-light">Tom And Jerry</h1>   <Link to="/" className="btn btn-primary">Back</Link>
       <h1>Score:<span className="">{score}</span></h1>
       <Container>
         <Row name>

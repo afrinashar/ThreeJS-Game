@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import ReactPainter from "react-painter";
+import { Link } from "react-router-dom";
 
 export const Drawing = () => {
   //const [color, setColor] = useState("");
 
   return (
     <>
-      Drawing
+     <h1 className="bg-danger text-light">Drawing</h1> <Link to="/"  className="btn btn-danger text-light"> Back</Link>
       <ReactPainter
         width={100}
         height={100}
@@ -25,11 +26,7 @@ export const Drawing = () => {
                 <label htmlFor=""> Line</label> 
                 <input type="range"  min={1} max={50} onChange={e => setLineWidth(e.target.value)} />
               </div>
-              <div className="col">  <select onChange={e => setLineCap(e.target.value)}>
-        <option value="round">round</option>
-        <option value="butt">butt</option>
-        <option value="square">square</option>
-      </select></div>  
+           
       <div className="col">  <select onChange={e => setLineJoin(e.target.value)}>
         <option value="round">round</option>
         <option value="bevel">bevel</option>
