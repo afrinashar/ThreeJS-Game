@@ -40,8 +40,8 @@ import { Link } from "react-router-dom";
          
           <Col>
             <Card>
-              <img src={house} className="float-left"></img>{" "}
-              <CardImgOverlay name={image} className="">
+              <img src={house} className=" house float-left"></img>{" "}
+              <CardImgOverlay   className="">
               <Col>
             <img src={tom} className= {`${image === jerry? "tom" :""}`}width={400} height={150}></img>
           </Col> <div   onClick={(e)=>handle(result)}>
