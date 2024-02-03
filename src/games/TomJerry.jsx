@@ -5,8 +5,8 @@ import tom from "../assets/tom.png";
 import dog from "../assets/dog.png";
 import jerry from "../assets/jerry.png";
 import "./TomJerry.css";
-import { Value } from "sass";
-const TomJerry = () => {
+import { Link } from "react-router-dom";
+ const TomJerry = () => {
   const [randomNumber, setRandomNumber] = useState(null);
   const [score, setScore] = useState(0 );
 
@@ -19,7 +19,7 @@ const TomJerry = () => {
     return () => clearInterval(interval);
   }, []);
   const image = randomNumber == 0 ? jerry : dog;
-  const result = randomNumber == 0 ? "jerry" : "dog";
+  const result = randomNumber == 0 ? "jerry" : "dog"; 
   const handle = (result) => {
   if (result == "jerry") {
     
@@ -33,20 +33,20 @@ const TomJerry = () => {
  
   return (
     <>
-     <h1 className="bg-primary text-light">Tom And Jerry</h1>
-      <h1>Score:{score}</h1>
+     <h1 className="bg-primary text-light">Tom And Jerry</h1>   <Link className="btn btn-primary">Back</Link>
+      <h1>Score:<span className="">{score}</span></h1>
       <Container>
         <Row name>
          
           <Col>
             <Card>
               <img src={house} className="float-left"></img>{" "}
-              <CardImgOverlay name={image} className="jerry">
+              <CardImgOverlay name={image} className="">
               <Col>
-            <img src={tom} className="tom" width={400} height={150}></img>
+            <img src={tom} className= {`${image === jerry? "tom" :""}`}width={400} height={150}></img>
           </Col> <div   onClick={(e)=>handle(result)}>
                 <img
-                  className=" m-3   float-end"
+                  className="    jerry float-end "
                   src={image}
                   width={300}
                   height={200}

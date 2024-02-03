@@ -87,16 +87,7 @@
   color: #fff;
   font-weight: bold;
 }   
-.perry{
-  background-image: url('./assets/perry.png')  ;  
- background-repeat: no-repeat;
-  background-size: 400px 300px;  position: relative;
-  animation: mymove 0.5s ;
-}
-@keyframes mymove {
-  from {top: 200px;}
-  to {top: 10px;}
-}
+c
 
 .board2 button{ font-weight:900; cursor:url(''), auto;}
 .o{background-color: #ff0000;}

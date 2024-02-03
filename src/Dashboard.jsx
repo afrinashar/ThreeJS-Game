@@ -62,9 +62,9 @@ const Dashboard = () => {
             </Card></Col>
         </Row>   <Row>
           <Col><Card>
-              <Link to="DiceWar">
+              <Link to="tom">
                 <img src={dice} className="fluid w-100 p-5"></img>
-                <h1>Lucky Number</h1>
+                <h1>Tom and Jerry</h1>
               </Link>
             </Card></Col>
          <Col><Card>
