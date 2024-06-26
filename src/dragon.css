@@ -1,0 +1,15 @@
+.tom{ 
+    width: 600px ;  
+       animation: mymove 2s ; margin: 0px  0px 0px 50px;
+        
+     }
+     @keyframes mymove {
+       from {left: 100px;}
+       to {right: 10px;}
+     }
+     .jerry{ margin: 10px  0px  400px 100px; } 
+   .App{  text-align: center;
+     height: 100vh;
+     background-color: #f0f0f0;
+     overflow: hidden;
+     position: relative;}

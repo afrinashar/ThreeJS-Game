@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import   { useState } from "react";
 import cursorImage from '../assets/hammer.png'
-import "../App.css"; import { Link } from "react-router-dom";
+import perry from '../assets/perry.png'
+
+import "../App.css";
+ import { Link } from "react-router-dom";
 const Hide = () => {
   const [score, setScore] = useState(0);
   const [computer, setComputer] = useState("zero");

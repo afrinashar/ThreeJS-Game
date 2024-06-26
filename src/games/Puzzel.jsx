@@ -1,77 +1,59 @@
 import React,{useState} from 'react'
 import "../App.css"
 const Puzzel = () => {
-  const PuzzlePiece = ({ imageSrc, position, handleDragStart, handleDragOver, handleDrop }) => {
-    return (
-      <img 
-        src={imageSrc}
-        draggable
-        onDragStart={(e) => handleDragStart(e, position)}
-        onDragOver={(e) => handleDragOver(e)}
-        onDrop={(e) => handleDrop(e, position)}
-        className="puzzle-piece" 
-        alt="puzzle piece" 
-      />
-    );
-  }
-  
-  const GameBoard = ({ puzzlePieces, handleDragStart, handleDragOver, handleDrop }) => {
-    return (
-      <div className="game-board">
-        {puzzlePieces.map((piece, index) => (
-          <PuzzlePiece 
-            key={index}
-            imageSrc={piece.imageSrc}
-            position={piece.position}
-            handleDragStart={handleDragStart}
-            handleDragOver={handleDragOver}
-            handleDrop={handleDrop}
-          />
-        ))}
-      </div>
-    );
-  }
-  const [puzzlePieces, setPuzzlePieces] = useState([
-    { imageSrc: 'piece1.jpg', position: 0 },
-    { imageSrc: 'piece2.jpg', position: 1 },
-    // Add more pieces as needed
-  ]);
+const generateTile=()=>{
+  const [state,setState]=useState()
+  const [swaptile,setSwapetile]=useState()
 
-  // Functions for handling drag-and-drop events
-  const handleDragStart = (e, position) => {
-    e.dataTransfer.setData('position', position);
+  let NewTiles=[];
+  for(let i=0; i<25;i++){
+    let tiles={id:i}
+    NewTiles.push(tiles)
   }
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
+  //randamise array
+  let length =NewTiles.length
+  for (let i=0;i<length;i++){
+    let random =Math.floor(Math.random())
+    let randomArray =NewTiles.splice(random, 1)
+    NewTiles.push(randomArray[0])
+    console.log(NewTiles, random,randomArray);
   }
-
-  const handleDrop = (e, currentPosition) => {
-    e.preventDefault();
-    const newPosition = e.dataTransfer.getData('position');
-    const updatedPuzzlePieces = puzzlePieces.map((piece, index) => {
-      if (index === currentPosition) {
-        return puzzlePieces[newPosition];
-      }
-      if (index === newPosition) {
-        return puzzlePieces[currentPosition];
-      }
-      return piece;
-    });
-    setPuzzlePieces(updatedPuzzlePieces);
-  }
-
-  return (
-    <div className="app">
-      <h1>Image Puzzle Game</h1>
-      <GameBoard 
-        puzzlePieces={puzzlePieces} 
-        handleDragStart={handleDragStart}
-        handleDragOver={handleDragOver}
-        handleDrop={handleDrop}
-      />
-    </div>
-  );
 }
+const handleSwap=(id)=>{
+  if(tileSelected){
+    setSwapetile(selectedTileId, id)
+  }
+  else{
+    setState({selectedTileId:id},{ tileSelected:true})
+  }
+}
+  const swapTile =(id1,id2)=>{
+    let NewTiles=[...tilesArray]
+    let index1=tilesArray.findIndex(tile=>tile.id===id1)
+    let index2=tilesArray.findIndex(tile=>tile.id===id2)
+let tile1={...NewTiles[index1]}
+let tile2={...NewTiles[index2]}
+NewTiles[index2]=tile1
+NewTiles[index2]=tile2
+setState({tilesArray:NewTiles}, {tileSelected:false}, {tileSelectedId:null})
+
+
+  }
+    return (
+      <>
+        <h1>Image Puzzle Game</h1>
+        <div className='App'>
+          <div className='container'>
+{
+  tilesArr.map((tile,i)=><div  onClick={()=>handleSwap(tile.id)} key={i}    className={selectedTileId===tile.id ? "tiolewrap selected " : " title wrap"}> {tile.id}</div>  )
+}
+
+
+          </div>
+        </div>
+        
+      </>
+    );
+  }
 
 export default Puzzel

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import   { useState, useEffect } from "react";
 import { CardImgOverlay, Card, Col, Container, Row } from "react-bootstrap";
 import house from "../assets/house.jpg";
 import tom from "../assets/tom.png";

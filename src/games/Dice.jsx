@@ -20,7 +20,7 @@ const Dice = () => {
     const [comment, setComment] = useState("");
     const [input, setInput] = useState("");
     const [score, setScore] = useState(0);
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState(zero);
     const [high, setHigh] = useState(0);
     const [name, setName] = useState("");  
     const handleChange = (event) => {

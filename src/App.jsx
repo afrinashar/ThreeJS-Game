@@ -23,6 +23,8 @@ import Dashboard from "./Dashboard";
 import TomJerry from "./games/TomJerry";
 import MainApp from './games/Cards'
 import { Drawing } from "./components/Drawing";
+import Dragon from "./Dragon";
+import AddNumbers from "./AddNumbers";
  function App() {
   return (
     <>
@@ -40,6 +42,9 @@ import { Drawing } from "./components/Drawing";
         <Route exact path="/cards" element={<MainApp />} />
         <Route exact path="/Dice" element={<Dice />} />        <Route exact path="/tictac" element={<Tictac/>} />
         <Route exact path="/SnakeAndLadders" element={<Div />} /> 
+        <Route exact path="/dragon" element={<Dragon />} /> 
+        <Route exact path="/add" element={<AddNumbers/>} /> 
+
       </Routes>
      
       {/* <div style={{ height: '100vh' }}>
