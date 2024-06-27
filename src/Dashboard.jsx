@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import tom from "./assets/tomjerry.jpg";
 import sum from "./assets/sum.png";
 import hide from "./assets/perryt.jpg";
-import drawing from "./assets/drawing.webp";
+import jb from "./assets/jb.jpg";
 import snake from "./assets/snaket.jpg";
 import dice from "./assets/dice.jpg";
 import tic from "./assets/tict.jpg";
@@ -13,21 +13,21 @@ import test from "./assets/testrist.jpg";
 const Dashboard = () => {
   return (
     <>
-      <Card className="fluid">
-        <Link to="Drawing">
-          <img src={drawing} className="fluid  w-100 p-5 "></img>
-          <h1>Drawing</h1>
-        </Link>
-      </Card>
+     
       <Row>
         {" "}
-        <h1 className="text-light bg-danger">games Hub</h1>
-        <Row>
+        <h1 className="text-light bg-primary">games Hub</h1>
+        <Row><Col><Card className="fluid">
+        <Link to="batman">
+          <img src={jb} className="fluid  w-100 p-5 "></img>
+          <h1> BATMAN vs JOKER</h1>
+        </Link>
+      </Card> </Col> 
           <Col>
-            <Card className="fluid">
+            <Card className="">
               <Link to="HideAndSeek">
                 <img src={hide} className="fluid  w-100 p-5 "></img>
-                <h1>Hide And Seek</h1>
+                <h1 className="bg-red">Hide And Seek</h1>
               </Link>
             </Card>
           </Col>

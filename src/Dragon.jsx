@@ -1,17 +1,21 @@
 // src/Game.js
 import   { useState, useEffect } from 'react';
   import './dragon.css'
+  import batman from "../src/assets/batman.gif"
+  import joker from "../src/assets/joker.gif"
+  import game from "../src/assets/game.jpg"
+  import obst from "../src/assets/obst.png"
+
   const Dino = ({ dinoY }) => {
     const dinoStyle = {
       position: 'absolute',
       bottom: `${dinoY}px`,
-      left: '50px',
-      width: '50px',
-      height: '50px',
-      backgroundColor: 'gray',
+       
+      margin:"10px"
     };
   
-    return <div style={dinoStyle}></div>;
+    return <>
+   <div> <img className=""  src={batman} height={150} width={50} style={dinoStyle}></img></div><div><br></br><br></br><br></br><div></div><img className="mx-5 p-4"  src={joker} height={150} width={100} style={dinoStyle}></img></div></>
   };
   
   const Ground = () => {
@@ -20,7 +24,7 @@ import   { useState, useEffect } from 'react';
       bottom: '0px',
       left: '0px',
       width: '100%',
-      height: '25px',
+      height: '55px',
       backgroundColor: 'green',
     };
   
@@ -30,14 +34,14 @@ import   { useState, useEffect } from 'react';
   const Obstacle = ({ obstacleX }) => {
     const obstacleStyle = {
       position: 'absolute',
-      bottom: '50px',
+      bottom: '40px',
       left: `${obstacleX}px`,
-      width: '20px',
-      height: '50px',
-      backgroundColor: 'brown',
+      width: '70px',
+      height: '76px',
+      
     };
   
-    return <div style={obstacleStyle}></div>;
+    return <img style={obstacleStyle} src={obst}></img> 
   };
   
   const Dragon = () => {
@@ -45,7 +49,17 @@ import   { useState, useEffect } from 'react';
     const [obstacleX, setObstacleX] = useState(500);
     const [isJumping, setIsJumping] = useState(false);
     const [gameOver, setGameOver] = useState(false);
-  
+    const [count, setCount] = useState(0);
+ 
+    useEffect(() => {
+        //Implementing the setInterval method
+        const interval = setInterval(() => {
+            setCount(count + 1);
+        }, 1000);
+ 
+        //Clearing the interval
+        return () => clearInterval(interval);
+    }, [count]);
     useEffect(() => {
       const handleJump = () => {
         if (!isJumping) {
@@ -103,13 +117,17 @@ import   { useState, useEffect } from 'react';
         setGameOver(true);
       }
     }, [obstacleX, dinoY]);
-  
+    const refreshPage=()=>{ 
+      window.location.reload(); 
+  }
     return (
       <div>
+        
         {gameOver ? (
-          <div>Game Over</div>
+          <div><h1>GAME OVER</h1>  <button className='btn btn-success'  onClick={refreshPage}>retry</button><img className='m-5' src={game} width={1000}></img></div>
         ) : (
-          <>
+          <><h1 className='text-danger'>BATMAN v/s JOKER</h1>
+          <h6> Score :{count}</h6>
             <Dino dinoY={dinoY} />
             <Ground />
             <Obstacle obstacleX={obstacleX} />

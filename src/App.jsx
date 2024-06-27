@@ -42,7 +42,7 @@ import AddNumbers from "./AddNumbers";
         <Route exact path="/cards" element={<MainApp />} />
         <Route exact path="/Dice" element={<Dice />} />        <Route exact path="/tictac" element={<Tictac/>} />
         <Route exact path="/SnakeAndLadders" element={<Div />} /> 
-        <Route exact path="/dragon" element={<Dragon />} /> 
+        <Route exact path="/batman" element={<Dragon />} /> 
         <Route exact path="/add" element={<AddNumbers/>} /> 
 
       </Routes>

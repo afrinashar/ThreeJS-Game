@@ -13,7 +13,7 @@ const Hide = () => {
     console.log(e.target.name, "randomr", random, mark);
   };
   return (
-    <>{cursorImage}
+    <> 
       <h1 className="bg-info p-5">catch the Perry</h1><Link to="/" className='btn btn-danger'>Back</Link>
     <h3>Rules:</h3> <p>click the box below, if you find the perry behind box the score will in crease</p> <div className="board2  custom-cursor border">
         {Array.from({ length: 9 }, (_, index) => (

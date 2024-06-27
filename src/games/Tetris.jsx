@@ -1,9 +1,9 @@
-import React from 'react'
-import Tetris from 'react-tetris'
+ import Tetris from 'react-tetris'
 const Tetrisg = () => {
-  return (
+  return (<><div className='bg-primary'>
+  <h1 className='bg-light'>TETRIS</h1>
     <Tetris
-    keyboardControls={{
+     keyboardControls={{
       // Default values shown here. These will be used if no
       // `keyboardControls` prop is provided.
       down: 'MOVE_DOWN',
@@ -44,7 +44,7 @@ const Tetrisg = () => {
       </div>
     )}
   </Tetris>
-  )
+ </div></> )
 }
 
 export default Tetrisg
