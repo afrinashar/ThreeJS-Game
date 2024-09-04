@@ -1,0 +1,63 @@
+/* Hide.css */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .image-left,
+  .image-right {
+    width: 200px;
+    height: auto;
+  }
+  
+  .board2 {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .cell2 {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    position: relative;
+    cursor: url('../assets/hammer.png'), auto;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .perry {
+    background-image: url('../assets/perry.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: translateY(100%);
+    animation: pop-up 0.5s forwards;
+  }
+  
+  .cell2.correct {
+    background-color: green;
+  }
+  
+  .cell2.incorrect {
+    background-color: red;
+  }
+  
+  @keyframes pop-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+
+
+  .back{
+    background-color: rgb(5, 176, 206);
+    color: #000000;
+  }

@@ -1,15 +1,50 @@
-.tic{
-    background: rgb(100,6,143);
+.tic {
     background: linear-gradient(84deg, rgba(100,6,143,1) 13%, rgba(193,11,247,1) 37%, rgba(80,0,149,1) 100%);
-color: white;
-border: 10px white;
+    color: white;
+    border: 10px solid white;
+    text-align: center;
 }
-.square{
-    width: 265px;
-    height: 265px ;
-    border: 3px white;
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Reduced cell size */
+    gap: 5px; /* Adjusted gap between cells */
+    justify-content: center;
+    margin: 20px auto;
 }
-.ticBtn{
-    background-color: rgb(255, 255, 255);
-    color: linear-gradient(84deg, rgba(100,6,143,1) 13%, rgba(193,11,247,1) 37%, rgba(80,0,149,1) 100%);
- }.board-row{height: 265px;}
+
+.square {
+    width: 100px; /* Reduced width */
+    height: 100px; /* Reduced height */
+    border: 2px solid white; /* Adjusted border width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.fit-image {
+    width: 80%; /* Adjusted to fit within the smaller square */
+    height: 80%; /* Adjusted to fit within the smaller square */
+    object-fit: cover;
+}
+
+.ticBtn {
+    background-color: #fff;
+    color: #64068f;
+    border: none;
+    padding: 5px 10px; /* Adjusted padding */
+    font-size: 14px; /* Adjusted font size */
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.ticBtn:hover {
+    background-color: #64068f;
+    color: white;
+}
+
+.status {
+    margin: 10px 0; /* Adjusted margin */
+}

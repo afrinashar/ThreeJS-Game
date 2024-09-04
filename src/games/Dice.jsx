@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
-import "../App.css";import zero from "../assets/0.png";
+import "./Dice.css";
+import zero from "../assets/0.png";
 import one from "../assets/1.png";
 import two from "../assets/2.png";
 import three from "../assets/3.png";
