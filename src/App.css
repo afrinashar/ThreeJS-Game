@@ -180,7 +180,7 @@ c
 .piece-preview {
   background-color: #eee;
 }
-.btn{border-radius: 2px;   margin: 2px; padding-inline: 6px;font-weight: 900; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: rgb(20, 0, 94); border: 3px solid rgb(20, 0, 94); }
+/* .btn{border-radius: 2px;   margin: 2px; padding-inline: 6px;font-weight: 900; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: rgb(20, 0, 94); border: 3px solid rgb(20, 0, 94); }
 .btn:hover{box-shadow: 3px 3px 12px rgb(20, 0, 94); size: 10px;}.App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -218,7 +218,7 @@ text-size-adjust: 100px;}
   justify-content: center;
   align-items: center;
   margin: 5px;
-}
+} */
 
 .rack {
   display: flex;
@@ -265,4 +265,60 @@ text-size-adjust: 100px;}
 .text-light {
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+
+
+.board-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.board-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.board-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.container-fluid {
+  background-color: #f0f8ff;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  border-radius: 20px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
 }

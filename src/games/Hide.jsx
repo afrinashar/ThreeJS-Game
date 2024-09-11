@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Hide.css";
-import { Link } from "react-router-dom";
 
 const Hide = () => {
   const [score, setScore] = useState(0);
@@ -26,8 +25,6 @@ const Hide = () => {
 
   return (
     <>
-      <h1 className="bg-info p-5">Catch the Perry</h1>
-      <Link to="/" className="btn back">Back</Link>
       <h3>Rules:</h3>
       <p>Click the box below. If you find Perry behind the box, your score will increase.</p>
       
@@ -60,7 +57,7 @@ const Hide = () => {
         )}
       </div>
 
-      <div className="card bg-info text-light p-5 pl-5">
+      <div className="card  text-dark p-5 pl-5">
         <h1>Score: {score}</h1>
       </div>
     </>

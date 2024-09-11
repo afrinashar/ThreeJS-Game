@@ -1,8 +1,7 @@
 import { useState } from "react";
-import x from "../assets/x.png";
-import o from "../assets/o.png";
+import xImage from "../assets/x.png";
+import oImage from "../assets/o.png";
 import "./Tic.css";
-import { Link } from "react-router-dom";
 
 const TicTac = () => {
   const [xIsNext, setXIsNext] = useState(true);
@@ -13,11 +12,7 @@ const TicTac = () => {
       return;
     }
     const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = <img src={x} alt="X" className="fit-image" />;
-    } else {
-      nextSquares[i] = <img src={o} alt="O" className="fit-image" />;
-    }
+    nextSquares[i] = xIsNext ? "X" : "O";  // Store "X" or "O"
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   }
@@ -26,20 +21,22 @@ const TicTac = () => {
   let status;
   if (winner) {
     status = "Winner: " + winner;
+  } else if (squares.every(Boolean)) {
+    status = "It's a Draw!";
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
   const start = () => {
-    window.location.reload();
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
   };
 
   return (
     <>
-      <h1 className="tic">Tic Tac Toe</h1>
-      <Link to="/" className="btn status tic">Back</Link>
+      {/* <Link to="/" className="btn status tic">Back</Link> */}
       <div className="status tic"><h3>{status}</h3></div>
-      <div className="board">
+      <div className="boardss">
         {Array.from({ length: 9 }, (_, index) => (
           <Square key={index} value={squares[index]} onSquareClick={() => handleClick(index)} />
         ))}
@@ -52,7 +49,8 @@ const TicTac = () => {
 function Square({ value, onSquareClick }) {
   return (
     <button className="square tic" onClick={onSquareClick}>
-      {value}
+      {value === "X" && <img src={xImage} alt="X" className="fit-image" />}
+      {value === "O" && <img src={oImage} alt="O" className="fit-image" />}
     </button>
   );
 }

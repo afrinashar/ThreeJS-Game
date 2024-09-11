@@ -1,0 +1,54 @@
+.minesweeper-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .minesweeper-container.board {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .minesweeper-container .row {
+    display: flex;
+  }
+  
+  .minesweeper-container .cell {
+    width: 40px;
+    height: 40px;
+    background-color: #99ccff;
+    border: 2px solid #003366;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cell:hover {
+    background-color: #80bfff;
+  }
+  
+  .cell.revealed {
+    background-color: #cceeff;
+    cursor: default;
+  }
+  
+  .cell.flagged {
+    background-color: #ffcccb;
+  }
+  
+  .cell.flagged::before {
+    content: '🚩';
+  }
+  
+  .btn {
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .cell {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+  

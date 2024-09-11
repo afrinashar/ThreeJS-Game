@@ -1,0 +1,65 @@
+.memory-game-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+  
+  .memory-game-container h1 {
+    color: #333;
+  }
+  
+  .game-info {
+    margin-bottom: 20px;
+  }
+  
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+  
+  .memory-game-container .card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+  }
+  
+  .memory-game-container.card.flipped {
+    background-color: #e0f7fa;
+    border-color: #00bcd4;
+    transform: scale(1.1);
+  }
+  
+  .reset-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reset-button:hover {
+    background-color: #0097a7;
+  }
+  
+  .game-over {
+    color: #ff5722;
+    font-size: 1.5em;
+  }
+  

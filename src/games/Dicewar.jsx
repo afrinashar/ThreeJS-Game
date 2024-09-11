@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Link } from "react-router-dom";
-import ladder from "../assets/lader.png";
-import snake1 from "../assets/snake1.png";
+// import { Link } from "react-router-dom";
+// import ladder from "../assets/ladder.png";
+// import snake1 from "../assets/snake1.png";
 import one from "../assets/1.png";
 import two from "../assets/2.png";
 import three from "../assets/3.png";
@@ -13,124 +13,77 @@ import zero from "../assets/0.png";
 
 const Dicewar = () => {
   const [imageOne, setImageOne] = useState(zero);
+  const [imageTwo, setImageTwo] = useState(zero);
+  const [positionOne, setPositionOne] = useState(1);
   const [positionTwo, setPositionTwo] = useState(1);
   const [message, setMessage] = useState("Player RED rolls first");
-  const [positionOne, setPositionOne] = useState(1);
-  const [imageTwo, setImageTwo] = useState(zero);
+  const [playerTurn, setPlayerTurn] = useState('RED');
 
-  const handleRollDices = () => {
-    const diceValueTwo = Math.floor(Math.random() * 6) + 1;
-    const newPositionTwo = positionTwo + diceValueTwo;
-    const displayImageTwo =
-      diceValueTwo === 1
-        ? one
-        : diceValueTwo === 2
-        ? two
-        : diceValueTwo === 3
-        ? three
-        : diceValueTwo === 4
-        ? four
-        : diceValueTwo === 5
-        ? five
-        : diceValueTwo === 6
-        ? six
-        : zero;
+  const diceImages = [one, two, three, four, five, six];
 
-    setImageTwo(displayImageTwo);
-    setMessage("Blue's Turn");
-
-    const snakesAndLadders = {
-      16: 6,
-      47: 26,
-      49: 11,
-      56: 53,
-      62: 19,
-      64: 60,
-      87: 24,
-      93: 73,
-      95: 75,
-      98: 78,
-    };
-
-    const newPositionWithSnakeOrLadder =
-      snakesAndLadders[newPositionTwo] || newPositionTwo;
-
-    setPositionOne(2);
-    setPositionTwo(
-      newPositionWithSnakeOrLadder > 100
-        ? positionOne
-        : newPositionWithSnakeOrLadder
-    );
+  const snakesAndLadders = {
+    16: 6,
+    47: 26,
+    49: 11,
+    56: 53,
+    62: 19,
+    64: 60,
+    87: 24,
+    93: 73,
+    95: 75,
+    98: 78,
   };
 
-  const handleRollDice = () => {
-    const diceValueOne = Math.floor(Math.random() * 6) + 1;
-    const newPositionOne = positionOne + diceValueOne;
-    const displayImageOne =
-      diceValueOne === 1
-        ? one
-        : diceValueOne === 2
-        ? two
-        : diceValueOne === 3
-        ? three
-        : diceValueOne === 4
-        ? four
-        : diceValueOne === 5
-        ? five
-        : diceValueOne === 6
-        ? six
-        : zero;
+  const rollDice = (player) => {
+    const diceValue = Math.floor(Math.random() * 6) + 1;
+    const newPosition = player === 'RED'
+      ? positionOne + diceValue
+      : positionTwo + diceValue;
+    const displayImage = diceImages[diceValue - 1];
 
-    const result =
-      imageOne > imageTwo
-        ? "Blue Wins!"
-        : imageOne < imageTwo
-        ? "Red Wins!"
-        : "It's a Tie!";
-
-    setImageOne(displayImageOne);
-    setMessage(result);
-
-    setPositionTwo(2);
-
-    const snakesAndLadders = {
-      16: 6,
-      47: 26,
-      49: 11,
-      56: 53,
-      62: 19,
-      64: 60,
-      87: 24,
-      93: 73,
-      95: 75,
-      98: 78,
-    };
-
-    const newPositionWithSnakeOrLadder =
-      snakesAndLadders[newPositionOne] || newPositionOne;
-
-    setPositionOne(
-      newPositionWithSnakeOrLadder > 100
-        ? positionOne
-        : newPositionWithSnakeOrLadder
-    );
+    if (player === 'RED') {
+      setImageOne(displayImage);
+      setPositionOne(
+        snakesAndLadders[newPosition] || newPosition > 100 ? positionOne : newPosition
+      );
+      setPlayerTurn('BLUE');
+      setMessage("Player BLUE's Turn");
+    } else {
+      setImageTwo(displayImage);
+      setPositionTwo(
+        snakesAndLadders[newPosition] || newPosition > 100 ? positionTwo : newPosition
+      );
+      setPlayerTurn('RED');
+      setMessage(
+        positionOne === positionTwo
+          ? "It's a Tie!"
+          : positionOne > positionTwo
+          ? "RED Wins!"
+          : "BLUE Wins!"
+      );
+    }
   };
 
-  const start = () => {
-    window.location.reload();
+  const handleRoll = (player) => {
+    rollDice(player);
+  };
+
+  const resetGame = () => {
+    setPositionOne(1);
+    setPositionTwo(1);
+    setImageOne(zero);
+    setImageTwo(zero);
+    setMessage("Player RED rolls first");
+    setPlayerTurn('RED');
   };
 
   return (
     <>
       <div className="container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 className="text-center bg-light text-dark rounded p-3 mb-4">Dice War</h1>
-        <Link to="/" className="btn btn-danger mb-4">
-          Back
-        </Link>
-        <h3>Rules:</h3>
-        <p>Player with the highest Dice value wins</p>
+        <h3 className="mb-4">Rules:</h3>
+        <p className="mb-4">Player with the highest dice value wins. Snakes and Ladders affect player positions.</p>
         <div className="row mb-5">
-          <div className="col card mx-2 p-3">
+          <div className="col card mx-2 p-3 text-center">
             <img
               src={imageTwo}
               alt="dice"
@@ -139,14 +92,14 @@ const Dicewar = () => {
               className="bg-danger border-5 rounded-5 mb-3"
             />
             <button
-              disabled={positionOne === 2}
+              disabled={playerTurn !== 'BLUE'}
               className="btn btn-danger text-light fw-bold w-100"
-              onClick={handleRollDices}
+              onClick={() => handleRoll('BLUE')}
             >
               Roll Dice
             </button>
           </div>
-          <div className="col card mx-2 p-3">
+          <div className="col card mx-2 p-3 text-center">
             <img
               src={imageOne}
               alt="dice"
@@ -155,9 +108,9 @@ const Dicewar = () => {
               className="bg-primary border-5 rounded-5 mb-3"
             />
             <button
-              disabled={positionTwo === 2}
+              disabled={playerTurn !== 'RED'}
               className="btn btn-primary text-light fw-bold w-100"
-              onClick={handleRollDice}
+              onClick={() => handleRoll('RED')}
             >
               Roll Dice
             </button>
@@ -165,7 +118,7 @@ const Dicewar = () => {
         </div>
         <div className="card text-center p-4">
           <h1>{message}</h1>
-          <button className="btn btn-light mt-3" onClick={start}>
+          <button className="btn btn-light mt-3" onClick={resetGame}>
             Re-Match
           </button>
         </div>

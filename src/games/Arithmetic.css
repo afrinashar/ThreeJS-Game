@@ -1,0 +1,32 @@
+.arithmetic-game {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feedback-text {
+    font-weight: bold;
+  }
+  
+  .feedback-text.text-success {
+    color: #28a745;
+  }
+  
+  .feedback-text.text-danger {
+    color: #dc3545;
+  }
+  
+  .form-control.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    color: #dc3545;
+  }
+  
+  .difficulty-selector {
+    margin-top: 20px;
+  }
+  
