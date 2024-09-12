@@ -1,56 +1,73 @@
+/* General container styling */
 .sudoku-container {
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .sudoku-board {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 1px;
-    background-color: #333;
-  }
-  
-  .sudoku-row {
-    display: contents;
-  }
-  
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sudoku title styling */
+.sudoku-title {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Board grid layout */
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: px;
+  background-color: #333;
+}
+
+/* Each row is a part of the grid */
+.sudoku-row {
+  display: contents;
+}
+
+/* Styling each cell */
+.sudoku-cell {justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+  padding: 2px;
+  height: 10;
+  padding-bottom: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #333;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.sudoku-cell:focus {
+  outline: none;
+  background-color: #e0f7fa;
+  border-color: #00bcd4;
+}
+
+/* Highlight for 3x3 grids */
+.sudoku-cell.highlight {
+  border-color: #ff5722;
+}
+
+/* Adjusting for different screen sizes */
+@media (max-width: 768px) {
   .sudoku-cell {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    text-align: center;
-    border: 1px solid #333;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 1.2rem;
+    justify-content: center !important;
+    align-items: center;
   }
-  
-  .sudoku-cell:focus {
-    outline: none;
-    background-color: #e0f7fa;
-    border-color: #00bcd4;
+}
+
+@media (max-width: 480px) {
+  .sudoku-cell {
+    font-size: 1rem;
   }
-  
-  .sudoku-cell.highlight {
-    border-color: #ff5722;
-  }
-  
-  .sudoku-cell.highlight:nth-child(3n+1) {
-    border-left: 2px solid #ff5722;
-  }
-  
-  .sudoku-cell.highlight:nth-child(3n) {
-    border-right: 2px solid #ff5722;
-  }
-  
-  .sudoku-cell:nth-child(27n+1),
-  .sudoku-cell:nth-child(27n+3) {
-    border-top: 2px solid #ff5722;
-  }
-  
-  .sudoku-cell:nth-child(27n+25),
-  .sudoku-cell:nth-child(27n+27) {
-    border-bottom: 2px solid #ff5722;
-  }
-  
+}
+

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import "./Hide.css";
 
 const Hide = () => {
@@ -24,19 +24,19 @@ const Hide = () => {
   };
 
   return (
-    <>
-      <h3>Rules:</h3>
-      <p>Click the box below. If you find Perry behind the box, your score will increase.</p>
-      
-      <div className="container">
+    <div className="hide-game-container container-fluid p-3">
+      <h3 className="text-center">Rules:</h3>
+      <p className="text-center">Click the box below. If you find Perry behind the box, your score will increase.</p>
+
+      <div className="game-area d-flex justify-content-center align-items-center flex-wrap">
         {showIncorrectImage && (
           <img
-            className="image-left"
+            className="image-left img-fluid"
             src="https://c.tenor.com/5TGzwoBrjQ0AAAAC/phineas-and-ferb-perry-the-platypus.gif"
             alt="Incorrect Choice"
           />
         )}
-        
+
         <div className="board2 custom-cursor border">
           {Array.from({ length: 9 }, (_, index) => (
             <button
@@ -47,20 +47,20 @@ const Hide = () => {
             ></button>
           ))}
         </div>
-        
+
         {showCorrectImage && (
           <img
-            className="image-right"
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cbdda0b7-8068-4548-a53f-2efcdcd9cef1/d4avgwk-a2433dbf-573a-4449-a4b5-deb0ac8387e1.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9jYmRkYTBiNy04MDY4LTQ1NDgtYTUzZi0yZWZjZGNkOWNlZjEvZDRhdmd3ay1hMjQzM2RiZi01NzNhLTQ0NDktYTRiNS1kZWIwYWM4Mzg3ZTEuZ2lmIn1dXX0.UiDkZXSHL1IyAVz_rlpHQ7Sa0sOit5MySxAuyAMEoo4"
+            className="image-right img-fluid"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cbdda0b7-8068-4548-a53f-2efcdcd9cef1/d4avgwk-a2433dbf-573a-4449-a4b5-deb0ac8387e1.gif"
             alt="Correct Choice"
           />
         )}
       </div>
 
-      <div className="card  text-dark p-5 pl-5">
+      <div className="score-card card bg-light shadow-lg text-dark p-4 text-center mt-4">
         <h1>Score: {score}</h1>
       </div>
-    </>
+    </div>
   );
 };
 

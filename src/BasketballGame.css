@@ -129,4 +129,37 @@
       font-size: 1.2rem;
     }
   }
-  
+  /* Responsive Design */
+@media (max-width: 600px) {
+  .court {
+    width: 200px;
+    height: 300px;
+  }
+
+  .hoop {
+    width: 70px;
+    height: 35px;
+  }
+
+  .basketball {
+    width: 30px;
+    height: 30px;
+  }
+
+  .shoot-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .scoreboard {
+    font-size: 1.2rem;
+  }
+
+  .game-container h1 {
+    font-size: 2rem;
+  }
+
+  .message {
+    font-size: 1.2rem;
+  }
+}

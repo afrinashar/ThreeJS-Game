@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Timer from '../components/Timer';
-import { Link } from 'react-router-dom';
 import './Arithmetic.css'; // Import custom CSS for styling
 
 const Arithmetic = () => {
@@ -9,16 +7,16 @@ const Arithmetic = () => {
   const [sum, setSum] = useState('');
   const [score, setScore] = useState(0);
   const [feedback, setFeedback] = useState('');
-  const [isCorrect, setIsCorrect] = useState(null); // Track correctness of answer
-  const [difficulty, setDifficulty] = useState('easy'); // Difficulty level
-  const [timeLeft, setTimeLeft] = useState(30); // Timer
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [difficulty, setDifficulty] = useState('easy');
+  const [timeLeft, setTimeLeft] = useState(30);
 
   useEffect(() => {
     generateQuestion();
     const timer = setInterval(() => {
       setTimeLeft(prev => prev - 1);
     }, 1000);
-    
+
     if (timeLeft <= 0) {
       clearInterval(timer);
       setFeedback('Time\'s up! Please refresh to start a new game.');
@@ -63,27 +61,29 @@ const Arithmetic = () => {
   };
 
   return (
-    <div className="arithmetic-game container text-center mt-5">
- 
+    <div className="arithmetic-game container text-center mt-5 p-4">
       <div className="score-timer mb-4">
-        <h2>Score: {score}</h2>
-        <h3>Time Left: {timeLeft}s</h3>
+        <h2 className="score-display">Score: <span>{score}</span></h2>
+        <h3 className="time-left">Time Left: <span>{timeLeft}s</span></h3>
       </div>
 
       <form onSubmit={submit}>
-        <div className="mb-3">
+        <div className="mb-3 equation-display">
           <h3>{num1} + {num2}</h3>
           <input 
             className={`form-control ${isCorrect === false ? 'is-invalid' : ''}`} 
             type="number" 
             value={sum} 
             onChange={(e) => setSum(e.target.value)}
+            placeholder="Enter your answer"
           />
           {isCorrect === false && <div className="invalid-feedback">Please enter the correct answer.</div>}
         </div>
 
-        <button className="btn btn-warning mb-3" type="submit">Submit</button>
-        <button className="btn btn-warning mb-3" type="button" onClick={generateQuestion}>Next Question</button>
+        <div className="btn-group mb-3">
+          <button className="btn btn-primary me-2" type="submit">Submit</button>
+          <button className="btn btn-secondary" type="button" onClick={generateQuestion}>Next Question</button>
+        </div>
       </form>
 
       <div className="feedback mb-4">
@@ -103,8 +103,7 @@ const Arithmetic = () => {
           <option value="hard">Hard</option>
         </select>
       </div>
-
-     </div>
+    </div>
   );
 };
 

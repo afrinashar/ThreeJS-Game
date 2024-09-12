@@ -52,8 +52,8 @@ const routeConfig = [
     path: "/HideAndSeek", 
     element: <Hide />, 
     backgroundColor: 'white', 
-    headerStyle: { backgroundColor: ' rgb(40 160 180)', color: 'black' }, 
-    footerStyle: { backgroundColor: 'rgb(40 160 180)', color: 'black' },
+    headerStyle: { backgroundColor: ' rgb(40 160 180)', color: 'white' }, 
+    footerStyle: { backgroundColor: 'rgb(40 160 180)', color: 'white' },
     title: 'Find the PERRY',
     footerContent: 'Enjoy the Hide and Seek Game'
   },
@@ -142,8 +142,8 @@ const routeConfig = [
     path: "/TicTac", 
     element: <Tictac />, 
     backgroundColor: '#9634ff78', 
-    headerStyle: { backgroundColor: '#B714EF', color: 'white' }, 
-    footerStyle: { backgroundColor: '#B714EF', color: 'white' },
+    headerStyle: { backgroundColor: '#B714EF', color: 'black' }, 
+    footerStyle: { backgroundColor: '#B714EF', color: 'black' },
     title: 'Arithmetic Game',
     footerContent: ''
   },
@@ -178,7 +178,7 @@ const routeConfig = [
     path: "/Maze", 
     element: <MazeGame />, 
     backgroundColor: 'lightgoldenrodyellow', 
-    headerStyle: { backgroundColor: 'darkgoldenrod', color: 'black' }, 
+    headerStyle: { backgroundColor: 'darkgoldenrod', color: 'white' }, 
     footerStyle: { backgroundColor: 'goldenrod', color: 'white' },
     title: 'Maze Game',
     footerContent: 'Find Your Way Through the Maze'
@@ -187,7 +187,7 @@ const routeConfig = [
     path: "/Memory", 
     element: <MemoryGame />, 
     backgroundColor: 'mintcream', 
-    headerStyle: { backgroundColor: 'lightgreen', color: 'black' }, 
+    headerStyle: { backgroundColor: 'lightgreen', color: 'white' }, 
     footerStyle: { backgroundColor: 'lightgreen', color: 'white' },
     title: 'Memory Game',
     footerContent: 'Test Your Memory'
@@ -206,7 +206,7 @@ const routeConfig = [
     element: <PongGame />, 
     backgroundColor: 'lightyellow', 
     headerStyle: { backgroundColor: 'goldenrod', color: 'black' }, 
-    footerStyle: { backgroundColor: 'darkgoldenrod', color: 'white' },
+    footerStyle: { backgroundColor: 'goldenrod', color: 'white' },
     title: 'Pong Game',
     footerContent: 'Play Classic Pong'
   },
@@ -215,7 +215,7 @@ const routeConfig = [
     element: <WordleClone />, 
     backgroundColor: 'lavenderblush', 
     headerStyle: { backgroundColor: 'orchid', color: 'white' }, 
-    footerStyle: { backgroundColor: 'darkorchid', color: 'white' },
+    footerStyle: { backgroundColor: 'orchid', color: 'white' },
     title: 'Wordle Clone',
     footerContent: 'Guess the Word'
   },
@@ -223,7 +223,7 @@ const routeConfig = [
     path: "/WhackAMole", 
     element: <WhackAMole />, 
     backgroundColor: 'lightblue', 
-    headerStyle: { backgroundColor: '#2d6a4f', color: 'black' }, 
+    headerStyle: { backgroundColor: '#2d6a4f', color: 'white' }, 
     footerStyle: { backgroundColor: '#2d6a4f', color: 'white' },
     title: 'Whack-A-Mole',
     footerContent: 'Whack the Moles!'
@@ -241,8 +241,8 @@ const routeConfig = [
     path: "/Sudoku", 
     element: <Sudoku />, 
     backgroundColor: 'beige', 
-    headerStyle: { backgroundColor: 'peru', color: 'black' }, 
-    footerStyle: { backgroundColor: 'saddlebrown', color: 'white' },
+    headerStyle: { backgroundColor: 'peru', color: 'white' }, 
+    footerStyle: { backgroundColor: 'peru', color: 'white' },
     title: 'Sudoku',
     footerContent: 'Solve the Sudoku Puzzle'
   },
@@ -251,7 +251,7 @@ const routeConfig = [
     element: <Battleship />, 
     backgroundColor: 'lightsteelblue', 
     headerStyle: { backgroundColor: 'steelblue', color: 'white' }, 
-    footerStyle: { backgroundColor: 'darkblue', color: 'white' },
+    footerStyle: { backgroundColor: 'steelblue', color: 'white' },
     title: 'Battleship',
     footerContent: 'Sink the Ships'
   },
@@ -276,9 +276,9 @@ const routeConfig = [
   { 
     path: "/Hangman", 
     element: <Hangman />, 
-    backgroundColor: 'rgb(122 211 113)', 
+    backgroundColor: '#dfdfdf', 
     headerStyle: { backgroundColor: 'grey', color: 'white' }, 
-    footerStyle: { backgroundColor: 'darkgrey', color: 'white' },
+    footerStyle: { backgroundColor: 'grey', color: 'white' },
     title: 'Hangman',
     footerContent: 'Guess the Word'
   },
@@ -322,8 +322,8 @@ const routeConfig = [
     path: "/CatchGame", 
     element: <CatchGame />, 
     backgroundColor: 'lightgreen', 
-    headerStyle: { backgroundColor: 'limegreen', color: 'black' }, 
-    footerStyle: { backgroundColor: 'limegreen', color: 'black' },
+    headerStyle: { backgroundColor: 'limegreen', color: 'white' }, 
+    footerStyle: { backgroundColor: 'limegreen', color: 'white' },
     title: 'Catch Game',
     footerContent: 'Catch the Targets'
   },
@@ -331,7 +331,7 @@ const routeConfig = [
     path: "/Charades", 
     element: <Charades />, 
     backgroundColor: 'lightgoldenrodyellow', 
-    headerStyle: { backgroundColor: 'goldenrod', color: 'black' }, 
+    headerStyle: { backgroundColor: 'goldenrod', color: 'white' }, 
     footerStyle: { backgroundColor: 'darkgoldenrod', color: 'white' },
     title: 'Charades',
     footerContent: 'Act and Guess'
@@ -340,7 +340,7 @@ const routeConfig = [
     path: "/Basketball", 
     element: <BasketballGame />, 
     backgroundColor: 'lightgoldenrodyellow', 
-    headerStyle: { backgroundColor: 'goldenrod', color: 'black' }, 
+    headerStyle: { backgroundColor: 'goldenrod', color: 'white' }, 
     footerStyle: { backgroundColor: 'darkgoldenrod', color: 'white' },
     title: 'Basketball',
     footerContent: 'Act and Guess'

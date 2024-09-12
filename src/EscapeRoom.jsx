@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import bg from "../src/assets/escaperoom.jpg"
+import bg from "../src/assets/escaperoom.jpg";
+import './EscapeRoom.css'; // Import custom CSS for styling
+
 const EscapeRoom = () => {
   const [step, setStep] = useState(0);
   const [input, setInput] = useState('');
@@ -48,83 +50,22 @@ const EscapeRoom = () => {
   };
 
   return (
-    <div style={styles.container}>
-       <p style={styles.step}>Step {step + 1}</p>
-      <p style={styles.message}>{message}</p>
+    <div className="escape-room-container">
+      <p className="escape-room-step">Step {step + 1}</p>
+      <p className="escape-room-message">{message}</p>
       <input
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder={`Try typing: ${validCommand}`}
-        style={styles.input}
+        className="escape-room-input"
       />
-      <button onClick={handleSubmit} style={styles.button}>Submit</button>
-      {hint && <p style={styles.hint}>{hint}</p>}
-      {step === 2 && <p style={styles.congrats}>You're almost there, just escape!</p>}
+      <button onClick={handleSubmit} className="escape-room-button">Submit</button>
+      {hint && <p className="escape-room-hint">{hint}</p>}
+      {step === 2 && <p className="escape-room-congrats">}
+      You're almost there, just escape!</p>}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-   // background: 'linear-gradient(180deg, #222, #555)',
-   backgroundImage: `url(${bg})`,
-    color: '#fff',
-    fontFamily: 'Arial, sans-serif',
-  },
-  title: {
-    fontSize: '3rem',
-    marginBottom: '20px',
-  },
-  step: {
-    fontSize: '1.5rem',
-    marginBottom: '10px',
-  },
-  message: {
-    fontSize: '1.2rem',
-    textAlign: 'center',
-    margin: '20px 0',
-    width: '80%',
-    maxWidth: '500px',
-  },
-  input: {
-    padding: '10px',
-    fontSize: '1rem',
-    width: '80%',
-    maxWidth: '300px',
-    marginBottom: '10px',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '1rem',
-    backgroundColor: '#28a745',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
-  hint: {
-    color: '#f8d7da',
-    backgroundColor: '#721c24',
-    padding: '10px',
-    borderRadius: '5px',
-    marginTop: '10px',
-    width: '80%',
-    maxWidth: '300px',
-    textAlign: 'center',
-  },
-  congrats: {
-    fontSize: '1.2rem',
-    marginTop: '20px',
-    color: '#ffd700',
-  },
 };
 
 export default EscapeRoom;

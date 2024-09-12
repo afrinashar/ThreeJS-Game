@@ -21,7 +21,6 @@
 
 .snake-segment.body {
   background-color: rgb(45, 134, 0);
-  border-radius: 30%;
   height: 8px;
 }
 
@@ -51,8 +50,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+   text-align: center;
 }
 
 .restart-button {
@@ -62,8 +60,7 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
-}
+ }
 
 .restart-button:hover {
   background-color: #218838;

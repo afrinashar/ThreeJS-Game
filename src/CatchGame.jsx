@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import basket from "../src/assets/basket.png";
 import apple from "../src/assets/apple.png";
 import newton from "../src/assets/newton.png";
+import './CatchGame.css'; // Import custom CSS
 
 const CatchGame = () => {
   const [position, setPosition] = useState(50); // Player's position
@@ -59,66 +60,28 @@ const CatchGame = () => {
   return (
     <div
       onMouseMove={handleCatch}
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '400px',
-        backgroundColor: 'rgb(180 235 164)',
-        overflow: 'hidden',
-      }}
+      className="catch-game-container"
     >
-      <h2>Score: {score}</h2>
-      <h3>Misses: {misses} / 3</h3>
-      {gameOver && <><img  width={250} src={newton} /> <h1>Game Over</h1></> }
+      <h2 className="score">Score: {score}</h2>
+      <h3 className="misses">Misses: {misses} / 3</h3>
+      {gameOver && (
+        <>
+          <img src={newton} alt="Game Over" className="game-over-image" />
+          <h1 className="game-over-text">Game Over</h1>
+        </>
+      )}
 
       {/* Player (Basket) */}
-      <div
-        style={{
-          position: 'absolute',
-          left: `${position}%`,
-          bottom: 0,
-          width: 50,
-          height: 50,
-          backgroundImage: `url(${basket})`, // Replacing with basket image
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          zIndex: 10, // Ensures the basket is above other elements
-
-        }}
-      />
+      <div className="basket" style={{ left: `${position}%` }} />
 
       {/* Falling Object (Apple) */}
       <div
-        style={{
-          position: 'absolute',
-          top: `${objectPosition.y}%`,
-          left: `${objectPosition.x}%`,
-          width: 30,
-          height: 30,
-          backgroundImage: `url(${apple})`, // Replacing with apple image
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
+        className="apple"
+        style={{ top: `${objectPosition.y}%`, left: `${objectPosition.x}%` }}
       />
 
       {gameOver && (
-        <button
-          onClick={restartGame}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            padding: '10px 20px',
-            backgroundColor: '#28a745',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
+        <button onClick={restartGame} className="restart-button">
           Restart
         </button>
       )}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './RockPaperScissors.css'; // Custom styles with Bootstrap and modern effects
+import './RockPaperScissors.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SnakeAndLadder.css'
 import rock from "../assets/rock.png";
 import paper from "../assets/paper.png";
 import scissor from "../assets/scissor.png";
@@ -9,8 +8,9 @@ import rocks from "../assets/rocks.jpg";
 import papers from "../assets/papers.jpg";
 import scissors from "../assets/scissors.jpg";
 
-const options = [rocks, papers, scissors];
-const option = [rock, paper, scissor];
+const options = [rock, paper, scissor];
+const backgroundOptions = [rocks, papers, scissors];
+
 function RockPaperScissors() {
   const [playerChoice, setPlayerChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
@@ -26,9 +26,9 @@ function RockPaperScissors() {
     if (choice === randomChoice) {
       result = 'tie';
     } else if (
-      (choice === 'rock' && randomChoice === 'scissors') ||
-      (choice === 'paper' && randomChoice === 'rock') ||
-      (choice === 'scissors' && randomChoice === 'paper')
+      (choice === rock && randomChoice === scissor) ||
+      (choice === paper && randomChoice === rock) ||
+      (choice === scissor && randomChoice === paper)
     ) {
       result = 'win';
     } else {
@@ -45,56 +45,31 @@ function RockPaperScissors() {
 
   return (
     <div className="game-container bg-gradient">
-      <div className="scoreboard row mb-4">
-        <div className="col-4">
-          <div className="score-card bg-primary text-white rounded shadow">
-            <h4>Win</h4>
-            <p>{scores.win}</p>
+      <div className="scoreboard row mb-4 justify-content-center">
+        {['Win', 'Tie', 'Lose'].map((label, idx) => (
+          <div className="col-4" key={idx}>
+            <div className={`score-card ${label.toLowerCase()} rounded shadow`}>
+              <h4>{label}</h4>
+              <p>{scores[label.toLowerCase()]}</p>
+            </div>
           </div>
-        </div>
-        <div className="col-4">
-          <div className="score-card bg-warning text-dark rounded shadow">
-            <h4>Tie</h4>
-            <p>{scores.tie}</p>
-          </div>
-        </div>
-        <div className="col-4">
-          <div className="score-card bg-danger text-white rounded shadow">
-            <h4>Lose</h4>
-            <p>{scores.lose}</p>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="round-counter mb-3 text-light shadow">
+      <div className="round-counter mb-3 shadow">
         Round: <strong>{round}</strong>
       </div>
 
       <div className="choices mb-4">
-        <img
-          className="choice-image rounded shadow-lg"
-          src={playerChoice}
-          alt={playerChoice || ''}
-        />
-        <img
-          className="choice-image rounded shadow-lg"
-          src={computerChoice}
-          alt={computerChoice || ''}
-        />
+        <img className="choice-image player-choice rounded shadow-lg" src={playerChoice} alt={playerChoice || ''} />
+        <img className="choice-image computer-choice rounded shadow-lg" src={computerChoice} alt={computerChoice || ''} />
       </div>
 
       <div className="options row justify-content-center">
-        {options.map((option) => (
-          <div className="col-4" key={option}>
-            <button
-              className="option-btn btn btn-lg btn-outline-light shadow"
-              onClick={() => playRound(option)}
-            >
-              <img
-                className="icon-image rounded-circle"
-                src={option}
-                alt={option}
-              />
+        {options.map((option, index) => (
+          <div className="col-4" key={index}>
+            <button className="option-btn btn btn-lg btn-outline-light shadow" onClick={() => playRound(option)}>
+              <img className="icon-image rounded-circle" src={backgroundOptions[index]} alt={option} />
             </button>
           </div>
         ))}

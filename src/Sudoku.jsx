@@ -29,7 +29,8 @@ const Sudoku = () => {
 
   return (
     <div className="sudoku-container">
-       <div className="sudoku-board">
+      <h2 className="sudoku-title">Sudoku Game</h2>
+      <div className="sudoku-board">
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="sudoku-row">
             {row.map((cell, colIndex) => (

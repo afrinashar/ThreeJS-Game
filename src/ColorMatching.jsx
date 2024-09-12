@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ColorMatching.css'; // Import custom CSS
 
 // Function to generate a random hex color
 const generateRandomColor = () => {
@@ -41,27 +42,24 @@ const ColorMatching = () => {
   };
 
   return (
-    <div style={styles.container}>
-       {attempts > 0 ? (
+    <div className="color-matching-container">
+      {attempts > 0 ? (
         <>
-          <p>Attempts left: {attempts}</p>
-          <p>Score: {score}</p>
-          <div style={{ ...styles.colorBox, backgroundColor: targetColor }}></div>
+          <p className="attempts">Attempts left: {attempts}</p>
+          <p className="score">Score: {score}</p>
+          <div className="color-box" style={{ backgroundColor: targetColor }}></div>
           <input
             type="color"
             value={selectedColor}
             onChange={(e) => setSelectedColor(e.target.value)}
-            style={styles.colorInput}
+            className="color-input"
           />
-          <button onClick={checkMatch} style={styles.button}>
+          <button onClick={checkMatch} className="button">
             Check Match
           </button>
           {feedback && (
             <p
-              style={{
-                ...styles.feedback,
-                color: feedback === 'Matched!' ? '#28a745' : '#dc3545',
-              }}
+              className={`feedback ${feedback === 'Matched!' ? 'success' : 'error'}`}
             >
               {feedback}
             </p>
@@ -69,45 +67,12 @@ const ColorMatching = () => {
         </>
       ) : (
         <>
-          <p>Game Over! Your score is: {score}</p>
-          <button onClick={resetGame} style={styles.button}>Play Again</button>
+          <p className="game-over">Game Over! Your score is: {score}</p>
+          <button onClick={resetGame} className="button">Play Again</button>
         </>
       )}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    fontFamily: 'Arial, sans-serif',
-    padding: '20px',
-  },
-  colorBox: {
-    width: '100px',
-    height: '100px',
-    margin: '20px 0',
-    borderRadius: '10px',
-    border: '2px solid #000',
-  },
-  colorInput: {
-    marginBottom: '10px',
-  },
-  button: {
-    padding: '10px 20px',
-    backgroundColor: '#A9014C',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    fontSize: '16px',
-  },
-  feedback: {
-    fontSize: '1.2rem',
-    marginTop: '10px',
-  },
 };
 
 export default ColorMatching;

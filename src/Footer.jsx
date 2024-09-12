@@ -1,10 +1,13 @@
+import './Footer.css'; // Import custom CSS
+
 const Footer = ({ style, content }) => {
-    return (
-      <footer style={{ ...style, padding: '1rem', textAlign: 'center' }}>
-        <p>{content}</p>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+  return (
+    <footer className="footer-container" style={{ ...style }}>
+      <div className="container">
+        <p className="footer-content">{content}</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

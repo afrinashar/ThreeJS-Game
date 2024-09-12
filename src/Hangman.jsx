@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Hangman.css'; // Custom CSS for hangman drawing
+import './Hangman.css'; // Custom CSS for hangman drawing and styling
 
 const secretWord = 'REACT';
 const maxAttempts = 6;
@@ -49,7 +49,7 @@ const Hangman = () => {
     return alphabet.map((letter, i) => (
       <button
         key={i}
-        className="btn btn-primary m-1"
+        className="letter-button btn btn-primary m-1"
         onClick={() => handleGuess(letter)}
         disabled={guessedLetters.includes(letter) || gameOver}
       >
@@ -69,9 +69,9 @@ const Hangman = () => {
   ];
 
   return (
-    <div className="container text-center mt-4">
-      <h2 className="mb-4">Hangman</h2>
-      <div className="hangman-stage">
+    <div className="container hangman-container text-center mt-4">
+ 
+      <div className="hangman-stage mb-3">
         <p>{hangmanStages[attempts]}</p>
       </div>
 
@@ -83,8 +83,14 @@ const Hangman = () => {
 
       {gameOver && (
         <div>
-          {winner ? <h3 className="text-success">Congratulations! You guessed the word!</h3> : <h3 className="text-danger">Game Over! The word was {secretWord}</h3>}
-          <button className="btn btn-danger mt-3" onClick={handleRestart}>Restart Game</button>
+          {winner ? (
+            <h3 className="text-success">Congratulations! You guessed the word!</h3>
+          ) : (
+            <h3 className="text-danger">Game Over! The word was {secretWord}</h3>
+          )}
+          <button className="btn btn-danger mt-3" onClick={handleRestart}>
+            Restart Game
+          </button>
         </div>
       )}
     </div>

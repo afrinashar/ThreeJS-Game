@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './MemoryGame.css'; // Import the CSS file for styling
-import memory from "../src/assets/memory.png"
+import memory from "../src/assets/memory.png";
+
 const cardArray = ['🍎', '🍌', '🍍', '🍇', '🍒', '🍓', '🍎', '🍌', '🍍', '🍇', '🍒', '🍓'];
 
 const shuffleCards = () => cardArray.sort(() => Math.random() - 0.5);
@@ -13,7 +14,7 @@ const MemoryGame = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const handleFlip = (index) => {
-    if (flipped.length === 1 && flipped[0] === index) return; // Prevent same card double click
+    if (flipped.length === 1 && flipped[0] === index) return;
     if (flipped.length === 2 || matched.includes(cards[index]) || gameOver) return;
 
     const newFlipped = [...flipped, index];
@@ -26,7 +27,7 @@ const MemoryGame = () => {
         setMatched([...matched, cards[firstIndex]]);
         setFlipped([]);
       } else {
-        setTimeout(() => setFlipped([]), 1000); // Hide cards after 1 second
+        setTimeout(() => setFlipped([]), 1000);
       }
     }
 
@@ -37,9 +38,14 @@ const MemoryGame = () => {
 
   return (
     <div className="memory-game-container">
-       <div className="game-info">
+      <div className="game-info">
         <p>Moves: {moves}</p>
-        {gameOver && <> <img width={70} src={memory}  /><h2 className="game-over">Congratulations! You Won!</h2></>}
+        {gameOver && (
+          <div className="game-over-container">
+            <img width={70} src={memory} alt="Memory" />
+            <h2 className="game-over">Congratulations! You Won!</h2>
+          </div>
+        )}
       </div>
       <div className="memory-game">
         {cards.map((card, index) => (

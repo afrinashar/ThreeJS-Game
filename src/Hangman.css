@@ -1,72 +1,64 @@
 .hangman-container {
-  text-align: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .word-display {
-  font-size: 24px;
-  margin: 20px 0;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.letter {
+.word-letter {
   display: inline-block;
-  width: 30px;
-  text-align: center;
+  margin: 0 8px;
   font-size: 28px;
-  margin: 0 5px;
-}
-
-.letter.revealed {
   font-weight: bold;
   color: #333;
 }
 
-.attempts {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.letters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.hangman-stage {
+  font-size: 24px;
+  color: #888;
 }
 
 .letter-button {
   font-size: 18px;
-  padding: 10px;
+  padding: 12px 15px;
   margin: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f7f7f7;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.letter-button:hover {
-  background-color: #e0e0e0;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .letter-button:disabled {
+  background-color: #96b7ff;
   cursor: not-allowed;
-  opacity: 0.6;
 }
 
-.game-status {
-  margin: 20px 0;
+.letter-button:hover {
+  background-color: #007bff;
+  color: rgb(1, 2, 77);
 }
 
-.reset-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.hangman-container.text-success {
+  color: #28a745;
 }
 
-.reset-button:hover {
-  background-color: #45a049;
+.hangman-container.text-danger {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .letter-button {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+ .hangman-container .word-letter {
+    font-size: 24px;
+  }
 }

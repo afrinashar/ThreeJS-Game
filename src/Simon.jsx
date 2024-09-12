@@ -60,7 +60,8 @@ const SimonGame = () => {
 
   return (
     <div className="simon-game-container">
-       <div className="color-buttons">
+      <h2>Simon Game</h2>
+      <div className="color-buttons">
         {colors.map((color) => (
           <button
             key={color}

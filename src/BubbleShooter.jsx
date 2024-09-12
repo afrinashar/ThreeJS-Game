@@ -47,8 +47,6 @@ const BubbleShooter = () => {
 
   return (
     <div className="container text-center mt-5">
-     
-
       {gameOver ? (
         <div>
           <h3 className="text-danger">Game Over!</h3>
@@ -59,6 +57,7 @@ const BubbleShooter = () => {
         </div>
       ) : (
         <div>
+          <h2 className="mb-4 text-primary">Bubble Shooter: Level {level}</h2>
           <div className="bubble-container mb-4">
             {bubbles.map((bubble, index) => (
               <div
@@ -74,11 +73,9 @@ const BubbleShooter = () => {
               ></div>
             ))}
           </div>
-
           <button className="btn btn-lg btn-danger shoot-btn" onClick={shootBubble}>
             Shoot Bubble
           </button>
- <h2 className="mb-4 text-primary">Bubble Shooter: Level {level}</h2>
           <p className="mt-3 text-secondary">Hits: {hitCount}</p>
         </div>
       )}

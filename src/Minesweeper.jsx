@@ -105,7 +105,7 @@ const Minesweeper = () => {
 
   return (
     <div className="minesweeper-container text-center mt-4">
-       <p>{gameOver ? 'Game Over!' : `Flags Remaining: ${flags}`}</p>
+      <h2 className="text-primary"> {gameOver ? 'Game Over!' : `Flags Remaining: ${flags}`}</h2>
       <div className="board">
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="row">
@@ -122,8 +122,8 @@ const Minesweeper = () => {
           </div>
         ))}
       </div>
-      <button className="btn btn-danger mt-4" onClick={restartGame}>Restart Game</button>
-    </div>
+     <div> <button className="btn mt-4" onClick={restartGame}>Restart Game</button>
+   </div> </div>
   );
 };
 

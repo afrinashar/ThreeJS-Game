@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './App.css'; // Custom CSS
+import './Battleship.css'; // Custom CSS for board responsiveness
 
 // Function to generate a 5x5 board filled with 'O'
 const generateBoard = () => Array(5).fill(null).map(() => Array(5).fill('O'));
@@ -40,7 +40,6 @@ const Battleship = () => {
   const [gameOver, setGameOver] = useState(false); // Game over state
 
   useEffect(() => {
-    // Randomly place ships when the component mounts
     setPlayerBoard(placeShips(generateBoard()));
   }, []);
 
@@ -85,7 +84,6 @@ const Battleship = () => {
                 <button
                   className={`btn btn-${cell === 'X' ? 'danger' : 'primary'} p-3 board-btn`}
                   onClick={() => handleAttack(rowIndex, colIndex)}
-                  style={{ width: '60px', height: '60px', fontSize: '24px' }}
                 >
                   {cell}
                 </button>

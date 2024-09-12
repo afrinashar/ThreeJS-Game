@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './PongGame.css'; // Import the CSS file for styling
 
 const PongGame = () => {
-  // Initialize the ball position to start at the center
   const [ballPosition, setBallPosition] = useState({ x: 50, y: 50 });
   const [paddlePosition, setPaddlePosition] = useState(50);
-  // Set initial direction to move leftward by using a negative dx value
   const [ballDirection, setBallDirection] = useState({ dx: -1, dy: 1 });
   const [score, setScore] = useState(0);
 
@@ -22,16 +20,12 @@ const PongGame = () => {
     const paddleY = paddlePosition;
 
     // Bounce off the top and bottom
-    if (ballY <= 0 || ballY >= 90) {
+    if (ballY <= 0 || ballY >= 95) {
       setBallDirection((prev) => ({ ...prev, dy: -prev.dy }));
     }
 
     // Bounce off the paddle
-    if (
-      ballX <= 10 &&
-      ballY >= paddleY &&
-      ballY <= paddleY + 10
-    ) {
+    if (ballX <= 5 && ballY >= paddleY && ballY <= paddleY + 10) {
       setBallDirection((prev) => ({ ...prev, dx: -prev.dx }));
       setScore((prev) => prev + 1); // Increment score
     }
