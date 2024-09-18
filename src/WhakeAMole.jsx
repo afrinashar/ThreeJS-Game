@@ -57,7 +57,7 @@ const WhackAMole = () => {
             onClick={() => handleWhack(index)}
             className={`mole-hole ${index === molePosition ? 'active' : ''}`}
           >
-            {index === molePosition && <img src={moleImage} alt="Mole" className="mole-img" />}
+            {index === molePosition && <img width={45}src={moleImage} alt="Mole" className="mole-img" />}
           </button>
         ))}
       </div>
