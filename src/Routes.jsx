@@ -37,8 +37,18 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import BasketballGame from './BasketballGame';
+import Test from './Test';
 // Array of route objects to make routes dynamic and easy to maintain
 const routeConfig = [
+  { 
+    path: "/test", 
+    element: <Test />, 
+    backgroundColor: 'rgb(218, 218, 255)', 
+    headerStyle: { backgroundColor: 'navy', color: 'white' }, 
+    footerStyle: { backgroundColor: 'darkblue', color: 'white' },
+    title: 'Test',
+    footerContent: 'Welcome to the Dashboard Page'
+  },
   { 
     path: "/", 
     element: <Dashboard />, 
