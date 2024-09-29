@@ -51,7 +51,7 @@ const Hide = () => {
         {showCorrectImage && (
           <img
             className="image-right img-fluid"
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cbdda0b7-8068-4548-a53f-2efcdcd9cef1/d4avgwk-a2433dbf-573a-4449-a4b5-deb0ac8387e1.gif"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cbdda0b7-8068-4548-a53f-2efcdcd9cef1/d4avgwk-a2433dbf-573a-4449-a4b5-deb0ac8387e1.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NiZGRhMGI3LTgwNjgtNDU0OC1hNTNmLTJlZmNkY2Q5Y2VmMVwvZDRhdmd3ay1hMjQzM2RiZi01NzNhLTQ0NDktYTRiNS1kZWIwYWM4Mzg3ZTEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.s8bgKe16beucXYvBWY7ENPVuODWwq_in3tIh6cGiXts"
             alt="Correct Choice"
           />
         )}

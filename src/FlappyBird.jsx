@@ -93,8 +93,7 @@ const FlappyBird = () => {
               width: '50px',
               height: '50px',
               transition: 'top 0.1s ease',
-              boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
-            }}
+             }}
           />
 
           {/* Pipes */}
