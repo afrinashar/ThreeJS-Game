@@ -37,7 +37,7 @@ import   { useState, useEffect } from 'react';
       bottom: '40px',
       left: `${obstacleX}px`,
       width: '70px',
-      height: '77px',
+      height: '78px',
       
     };
   
